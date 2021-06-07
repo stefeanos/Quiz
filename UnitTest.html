@@ -23,7 +23,7 @@
     ////////////////////////////////////////////////////////////////
 
     const { test } = QUnit
-    QUnit.module('Group A')
+    QUnit.module('Group A Model')
     test('success', (assert) => {
       var expectedHtml = `
 <div class="form_container">
@@ -31,7 +31,25 @@
 `
       assert.true(true, 'this is fine')
     })
+
     test('element', (assert) => {
+      ;(function (element) {
+        addEventListener('click', function () {
+          if (element.innerHTML === selectColor.innerHTML) {
+            checkbox.checked = true
+            alert('Du er menneske!')
+            submitBtn.disabled = false
+            submitBtn.classList.remove('btn-light')
+
+            submitBtn.classList.add('btn-success')
+            console.log(submitBtn)
+          } else {
+            alert('vennligst bekreft at du er menneske!')
+            location.reload(true)
+          }
+        })
+      })
+
       assert.true(true, 'this is also fine')
     })
     test('checkbox', (assert) => {
@@ -47,7 +65,7 @@ type="submit">button</button>`
       assert.true(true, 'this is also fine')
     })
     ////////////////////////////Group B///////////////////////
-    QUnit.module('Group B')
+    QUnit.module('Group B Model')
     test('element', (assert) => {
       var expectedHtml = `
     <main class="container">
@@ -156,6 +174,76 @@ type="submit">button</button>`
         // clean up once after all tests are done
       },
     })
-    ///////////////////////////////////////////////////////////////////////
+    QUnit.module('function', {
+      before: function () {
+        // prepare something once for all tests
+      },
+      beforeEach: function () {
+        // prepare something before each test
+      },
+      afterEach: function () {
+        // clean up after each test
+      },
+      after: function () {
+        // clean up once after all tests are done
+      },
+    }),
+      ///////////////////////////////////////////////////////////////////////
+      QUnit.module('Function ')
+    test('getRandomColor', (assert) => {
+      function getRandomColor() {
+        const letter = '0123456789ABCDEF'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+          color += letter[Math.floor(Math.random(1) * 16)]
+        }
+        return color
+      }
+      assert.true(true, 'this is fine')
+    })
+    /////////////////////////////////////////////////
+    QUnit.module(' Function ')
+    test('elements.forEach', (assert) => {
+      var expected = `
+  const color = getRandomColor();
+  element.style.backgroundColor = color;
+  element.innerHTML = color;
+  selectColor.innerHTML = color;
+`
+      assert.true(true, 'this is also fine')
+    })
+    //////////////////////////////////////////////////////
+    test('quiz()', (assert) => {
+      function quiz() {
+        let submitBtn
+        submitBtn = submit()
+        quizPlay()
+        checkbox.disabled = true
+        return submitBtn
+      }
+      assert.true(true, 'this is fine')
+    })
+
+    ////////////////////////////////////////////
+    test('elements.forEach', (assert) => {
+      ;(function (element) {
+        addEventListener('click', function () {
+          if (element.innerHTML === selectColor.innerHTML) {
+            checkbox.checked = true
+            alert('Du er menneske!')
+            submitBtn.disabled = false
+            submitBtn.classList.remove('btn-light')
+
+            submitBtn.classList.add('btn-success')
+            console.log(submitBtn)
+          } else {
+            alert('vennligst bekreft at du er menneske!')
+            location.reload(true)
+          }
+        })
+      })
+
+      assert.true(true, 'this is also fine')
+    })
   </script>
 </body>
