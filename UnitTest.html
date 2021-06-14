@@ -22,6 +22,60 @@
     // Each QUnit.test has its own test context object, accessible via its this variable. Properties on the module options object are copied over to the test context object at the start of each test. Such properties can also be changed from the hook callbacks. See § Example: Test context.
     ////////////////////////////////////////////////////////////////
 
+let element = "element";
+let checked = "Er du menneske?";
+let selectedColor = "Velg den heksadesimale fargen";
+let verification = "for verifisering";
+let options = "submit";
+let success = "#";
+let button = "btn btn-light";
+let start = "checkbox";
+
+
+
+
+
+   // First Test
+    QUnit.test("element", function (assert) {
+      let actual = element;
+      let expected = "element";
+
+      assert.equal(actual, expected, "element");
+    });
+
+    // Second test
+    QUnit.test ("checked",function (assert) {
+        let actual = checked;
+        let expected = "Er du menneske?";
+
+        assert.equal(
+          actual,
+          expected,
+          "checked"
+        );
+      }
+    );
+    // Third test
+    QUnit.test("selectedColor", function (assert) {
+      let actual = selectedColor;
+      let expected = "Velg den heksadesimale fargen";
+      assert.equal(actual, expected, true, "selectedColor");
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////
+
+
     const { test } = QUnit
     QUnit.module('Group A Model')
     test('success', (assert) => {
@@ -102,7 +156,47 @@ type="submit">button</button>`
       assert.true(true, 'this is also fine')
     })
     //////////////////////////////////Group C/////////////////////////////////
-    
+    QUnit.module('Group c')
+    QUnit.test('success', function (assert) {
+      var expectedHtml = `
+<div class="form_container">
+<form action="success.html">
+`
+      var actualHtml = successHtml(actualHtml)
+      assert.equal(actualHtml, expectedHtml)
+    })
+
+    QUnit.test('element', function (assert) {
+      var expectedHtml = `
+    <main class="container">
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    </main>`
+      var actualHtml = elementHtml(actualHtml)
+      assert.equal(actualHtml, expectedHtml)
+    })
+
+    QUnit.test('submit', function (assert) {
+      var expectedHtml = `
+<button class="btn btn-light"
+type="submit">button</button>`
+      var actualHtml = submitHtml(actualHtml)
+      assert.equal(actualHtml, expectedHtml)
+    })
+    QUnit.test('checkbox', function (assert) {
+      var expectedHtml = `
+<input type="checkbox" id="checkbox" />
+<label for="checkbox">checked</label>`
+      var actualHtml = checkboxHtml(actualHtml)
+      assert.equal(actualHtml, expectedHtml)
+    })
 
     ///////////////////////////////////////////////////////////////////
 
