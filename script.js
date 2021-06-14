@@ -32,9 +32,6 @@ function showQuiz() {
     </div>
     `;
 }
-
-
-
 // Assign color to elements
 
 //controller
@@ -82,7 +79,7 @@ function getRandomColor() {
 document.querySelector("button[type=submit]");
 elements.forEach(function (element) {
     element.addEventListener("click", function () {
-        if (element.innerHTML === selectColor.innerHTML) {
+        if (element || innerHTML === selectColor && innerHTML) {
             checkbox.checked = true;
             alert("Du er menneske!");
             submitBtn.disabled = false;
