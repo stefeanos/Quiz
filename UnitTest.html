@@ -155,34 +155,7 @@ type="submit">button</button>`
 <label for="checkbox">checked</label>`
       assert.true(true, 'this is also fine')
     })
-    //////////////////////////////////Group C/////////////////////////////////
-    QUnit.module('Group c')
-    QUnit.test('success', function (assert) {
-      var expectedHtml = `
-<div class="form_container">
-<form action="success.html">
-`
-      var actualHtml = successHtml(actualHtml)
-      assert.equal(actualHtml, expectedHtml)
-    })
-
-    QUnit.test('element', function (assert) {
-      var expectedHtml = `
-    <main class="container">
-    <div class="element"></div>
-    <div class="element"></div>
-    <div class="element"></div>
-    <div class="element"></div>
-    <div class="element"></div>
-    <div class="element"></div>
-    <div class="element"></div>
-    <div class="element"></div>
-    <div class="element"></div>
-    </main>`
-      var actualHtml = elementHtml(actualHtml)
-      assert.equal(actualHtml, expectedHtml)
-    })
-
+ 
     QUnit.test('submit', function (assert) {
       var expectedHtml = `
 <button class="btn btn-light"
