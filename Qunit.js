@@ -1,3 +1,12 @@
+let element = "element";
+let checked = "Er du menneske?";
+let selectedColor = "Velg den heksadesimale fargen";
+let verification = "for verifisering";
+let options = "submit";
+let success = "#";
+let button = "btn btn-light";
+let start = "checkbox";
+
 
 function successHtml() {
   return `
